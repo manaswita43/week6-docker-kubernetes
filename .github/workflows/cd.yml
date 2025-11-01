@@ -25,13 +25,9 @@ jobs:
         run: |
           docker build -t ${{ secrets.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GAR_REPOSITORY }}/iris-api:${{ github.sha }} ./app
 
-      - name: Tag the Docker Image
-        run: |
-          docker tag iris-api ${{ secrets.GAR_LOCATION }}1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GAR_REPOSITORY }}/iris-api: latest
-
       - name: Push Image to Artifact Registry
         run: |
-          docker push ${{ secrets.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GAR_REPOSITORY }}/iris-api:latest
+          docker push ${{ secrets.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GAR_REPOSITORY }}/iris-api: latest
 
       - name: Set up GKE Credentials
         uses: google-github-actions/get-gke-credentials@v2
