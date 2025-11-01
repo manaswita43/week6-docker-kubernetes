@@ -48,6 +48,11 @@ jobs:
           location: ${{ secrets.GKE_ZONE }}
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
+      - name: Apply Kubernetes Manifests (if not already exists)
+        run: |
+          kubectl apply -f k8s/deployment.yaml
+          kubectl apply -f k8s/service.yaml
+
       - name: Deploy to GKE
         run: |
           kubectl set image deployment/iris-api iris-api=$IMAGE
