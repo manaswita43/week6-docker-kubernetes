@@ -27,7 +27,7 @@ jobs:
 
       - name: Tag the Docker Image
         run: |
-          docker tag iris-api ${{ secrets.GAR_LOCATION }}1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GAR_REPOSITORY }}/iris-api:latest
+          docker tag iris-api ${{ secrets.GAR_LOCATION }}1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GAR_REPOSITORY }}/iris-api: latest
 
       - name: Push Image to Artifact Registry
         run: |
