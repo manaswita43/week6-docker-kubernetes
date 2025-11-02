@@ -1,16 +1,11 @@
 FROM python:3.10-slim
 
-# Set working directory
 WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
-# Copy requirements and install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the app source code
 COPY . .
-
-# Expose FastAPI port
+# ensure your model is inside /app/models/
 EXPOSE 8200
 
-# Run FastAPI app
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8200"]
