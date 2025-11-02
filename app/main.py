@@ -13,6 +13,10 @@ def home():
 
 @app.post("/predict/")
 def predict(features: list = Body(...)):
-    prediction = model.predict([np.array(features)])
+    """
+    Expects JSON body like:
+    [[5.1, 3.5, 1.4, 0.2]]
+    """
+    features_array = np.array(features)
+    prediction = model.predict(features_array)
     return {"prediction": prediction.tolist()}
-
