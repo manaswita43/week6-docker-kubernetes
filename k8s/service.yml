@@ -6,7 +6,7 @@ spec:
   selector:
     app: iris-api
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8200
-  type: LoadBalancer
+  - protocol: TCP
+    port: 8200
+    targetPort: 8200
+  type: ClusterIP
