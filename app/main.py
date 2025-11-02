@@ -12,6 +12,7 @@ def home():
     return {"message": "Iris Prediction API is live!"}
 
 @app.post("/predict/")
-def predict(features: list):
+def predict(features: list = Body(...)):
     prediction = model.predict([np.array(features)])
     return {"prediction": prediction.tolist()}
+
