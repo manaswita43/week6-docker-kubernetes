@@ -51,23 +51,23 @@ week6-docker-kubernetes/
   ```
 - Google Cloud Setup
   ### Prerequisites
-      - Enable Artifact Registry and GKE API.
-      - Create:
-        - Artifact Registry Repository
-        - GKE Cluster
-      - Connect:
-        ```bash
-           gcloud container clusters get-credentials iris-cluster --region us-central1 --project <PROJECT_ID>
-        ```
+  - Enable Artifact Registry and GKE API.
+  - Create:
+    - Artifact Registry Repository
+    - GKE Cluster
+  - Connect:
+    ```bash
+    gcloud container clusters get-credentials iris-cluster --region us-central1 --project <PROJECT_ID>
+    ```
 - Kubernetes Deployment
   - deployment.yml
   - service.yml
   - Deploy
     ```bash
-        kubectl apply -f k8s/deployment.yaml
-        kubectl apply -f k8s/service.yaml
-        kubectl get pods
-        kubectl get services
+    kubectl apply -f k8s/deployment.yaml
+    kubectl apply -f k8s/service.yaml
+    kubectl get pods
+    kubectl get services
     ```
 - CI/CD Pipeline (GitHub Actions)
   ```.github/workflows/cd.yml```
@@ -90,7 +90,7 @@ week6-docker-kubernetes/
   kubectl port-forward <pod-name> 8080:8200
   ```
   Visit
-  [https://ssh.cloud.google.com/devshell/proxy?port=8080]
+  [https://ssh.cloud.google.com/devshell/proxy?port=8080]()
   
   Test API:
   ```bash
