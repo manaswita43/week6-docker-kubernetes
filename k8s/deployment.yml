@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: iris-api
-        image: us-central1-docker.pkg.dev/mlops-473405/iris-api/iris-api:latest
+        image: us-central1-docker.pkg.dev/mlops-473405/ml-docker/iris-api:latest
         ports:
         - containerPort: 8200
         env:
